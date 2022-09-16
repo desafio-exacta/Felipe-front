@@ -1,0 +1,53 @@
+@import "./../../../../theme";
+@import "./../../../../mixin";
+
+.step_header {
+	min-height: 73px;
+	@include flex(center);
+	padding-block: 10px;
+	background-color: $grey2b;
+
+	&__row {
+		@include row(-10px);
+	}
+	&__column {
+		@include column(50%, 10px);
+		transition: 0.5s;
+
+		&:nth-of-type(1),
+		&:nth-of-type(3) {
+			text-align: right;
+		}
+		@include md {
+			@include column(25%, 10px);
+
+			&:nth-of-type(1),
+			&:nth-of-type(3) {
+				text-align: left;
+			}
+		}
+	}
+	&__title {
+		display: block;
+		@include roboto(8px, 700);
+		color: $blue;
+	}
+	&__text {
+		display: block;
+		@include openSans(16px, 700);
+		color: $greyf;
+	}
+	&__extra {
+		display: block;
+		translate: 0px -7px;
+	}
+	&__extra__title {
+		color: $blue;
+		@include roboto(8px, 700);
+		margin-right: 3px;
+	}
+	&__extra__text {
+		@include openSans(8px);
+		color: $greyf;
+	}
+}

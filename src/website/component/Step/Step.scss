@@ -1,0 +1,52 @@
+@import "./../../../theme";
+@import "./../../../mixin";
+
+.step {
+	counter-reset: step;
+
+	&__list {
+		min-height: 36px;
+		padding-top: 8px;
+		background-color: $greye7;
+
+		&__container {
+			@include flex(center, space-between);
+			flex-wrap: wrap;
+		}
+	}
+	&__list__item {
+		@include roboto(10px, 700);
+		@include flex(center);
+		margin-bottom: 8px;
+		margin-left: 16px;
+		translate: -16px 0px;
+		opacity: 0.4;
+
+		&.valid {
+			&:before {
+				background-color: $grey3;
+			}
+		}
+		&.selected {
+			opacity: 1;
+		}
+
+		&:before {
+			counter-increment: step;
+			content: counter(step);
+			width: 20px;
+			height: 20px;
+			border-radius: 50px;
+			margin-right: 5px;
+			background-color: transparent;
+			box-shadow:0px 0px 0px 2.5px $grey3;
+			color: $blue;
+			@include flex(center, center);
+			@include roboto(10px, 700);
+		}
+	}
+	&__body {
+	}
+	&__item {
+	}
+}

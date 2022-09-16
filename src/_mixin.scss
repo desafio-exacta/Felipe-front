@@ -1,0 +1,92 @@
+@mixin flex($align: stretch, $justify: flex-start, $direction: row) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $direction;
+}
+
+@mixin inlineFlex($align: stretch, $justify: flex-start, $direction: row) {
+	display: inline-flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $direction;
+}
+
+@mixin row($gap: -15px) {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: $gap;
+	margin-right: $gap;
+}
+
+@mixin column($size: 100%, $gap: 15px) {
+	box-sizing: border-box;
+	max-width: $size;
+	flex-basis: $size;
+	padding-left: $gap;
+	padding-right: $gap;
+}
+
+@mixin roboto($size: initial, $weight: initial, $spacing: initial, $height: initial) {
+	font-family: "Roboto", sans-serif;
+	font-size: $size;
+	font-weight: $weight;
+	letter-spacing: $spacing;
+	line-height: $height;
+}
+
+@mixin openSans($size: initial, $weight: initial, $spacing: initial, $height: initial) {
+	font-family: "Open Sans", sans-serif;
+	font-size: $size;
+	font-weight: $weight;
+	letter-spacing: $spacing;
+	line-height: $height;
+}
+
+@mixin xs {
+	@media all and (max-width: 576px) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media all and (min-width: 576px) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media all and (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media all and (min-width: 992px) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media all and (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin xxl {
+	@media all and (min-width: 1400px) {
+		@content;
+	}
+}
+
+@mixin minMedia($size) {
+	@media all and (min-width: $size) {
+		@content;
+	}
+}
+
+@mixin maxMedia($size) {
+	@media all and (max-width: $size) {
+		@content;
+	}
+}

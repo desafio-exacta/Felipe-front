@@ -1,0 +1,20 @@
+.container {
+	margin: 0px auto;
+	width: min(100% - 30px, 1200px);
+
+	&.sm {
+		width: min(100% - 30px, 545px);
+	}
+	&.md {
+		width: min(100% - 30px, 630px);
+	}
+	&.lg {
+		width: min(100% - 30px, 992px);
+	}
+	&.xl {
+		width: min(100% - 30px, 1200px);
+	}
+	&.xxl {
+		width: min(100% - 30px, 1400px);
+	}
+}

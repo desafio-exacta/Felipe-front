@@ -1,0 +1,32 @@
+@import "./../../../theme";
+@import "./../../../mixin";
+
+@keyframes spinning {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.loader {
+	position: fixed;
+	inset: -10vw -10vh;
+	min-width: 100vw;
+	min-height: 100vh;
+	background-color: adjust-color($color: $grey0, $alpha: -0.5);
+	@include flex(center, center);
+
+	&:before {
+		content: "";
+		width: 50px;
+		height: 50px;
+		border-radius: 50px;
+		border: 10px solid $greyb;
+		border-top-color: $blue;
+		position: relative;
+		z-index: 1;
+		animation: spinning 1s infinite linear;
+	}
+}

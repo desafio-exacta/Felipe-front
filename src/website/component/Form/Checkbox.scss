@@ -1,0 +1,46 @@
+@import "./../../../theme";
+@import "./../../../mixin";
+
+.checkbox {
+	@include flex(center, flex-end, row-reverse);
+
+	&__field {
+		display: none;
+
+		&:checked + .checkbox__option {
+			background-color: $grey2b;
+			color: $blue;
+		}
+	}
+	&__option {
+		min-height: 35px;
+		outline: none;
+		border: 3px solid $grey4;
+		@include flex(center, center);
+		@include roboto(16px, 700);
+		padding: 5px 15px;
+        cursor:pointer;
+        position:relative;
+        transition:0.5s;
+
+		& ~ & {
+			margin-right: 10px;
+
+            &:after{
+                content: "";
+                width: 5px;
+                height: 3px;
+                display: block;
+                background-color: $grey4;
+                position: absolute;
+                top: 15px;
+                right: -10px;
+            }
+		}
+	}
+	&__label {
+		@include roboto(11px, 700);
+		color: $grey4;
+		margin-right: 5px;
+	}
+}

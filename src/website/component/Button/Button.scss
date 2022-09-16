@@ -1,0 +1,49 @@
+@import "./../../../theme";
+@import "./../../../mixin";
+
+.button {
+	padding: 5px 15px;
+	min-height: 40px;
+	outline: none;
+	border: 1px solid transparent;
+	@include inlineFlex(center, center);
+	cursor: pointer;
+	position: relative;
+	transition: 0.5s;
+	color: $grey2b;
+
+	&:hover,
+	&:focus,
+	&:active{
+		transition: 0.5s;
+		filter: brightness(0.9);
+	}
+	&.arrow_right{
+		&:after {
+			content: "";
+			width: 0px;
+			height: 0px;
+			display: block;
+			margin-left: 10px;
+			border: none;
+			border-left: 8px solid $grey2b;
+			border-top: 5px solid transparent;
+			border-bottom: 5px solid transparent;
+			transition: 0.5s;
+		}
+	
+		&[disabled] {
+			cursor: not-allowed;
+			color: $greyb;
+	
+			&:after {
+				border-left-color: $greyb;
+			}
+		}
+	}
+
+	&.sm{
+		min-height:25px;
+		padding:3px 7px;
+	}
+}

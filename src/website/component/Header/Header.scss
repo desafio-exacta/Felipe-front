@@ -1,0 +1,40 @@
+@import "./../../../theme";
+@import "./../../../mixin";
+
+.header {
+	height: 70px;
+	background-color: $grey1f;
+	@include flex(center);
+
+	&__container {
+		@include flex(center, flex-end);
+	}
+	&__menu {
+		@include flex(center, flex-end);
+	}
+	&__menu__item {
+		position: relative;
+
+		& + & {
+			margin-left: 30px;
+
+			&:before {
+				content: "";
+				width: 5px;
+				height: 5px;
+				border-radius: 50px;
+				background-color: $blue;
+				display: block;
+				position: absolute;
+				top: 5px;
+				left: -17px;
+			}
+		}
+	}
+	&__menu__link {
+		@include roboto(12px, 700);
+		@include flex(center, center);
+		color: $greyf;
+		cursor: pointer;
+	}
+}

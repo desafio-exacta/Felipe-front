@@ -1,0 +1,45 @@
+@import "./../../../theme";
+@import "./../../../mixin";
+
+.input {
+	width: 100%;
+	position: relative;
+	@include flex(initial, initial, column-reverse);
+
+	&__feedback {
+	}
+	&__field {
+		padding:5px 10px;
+		width: 100%;
+		min-height: 35px;
+		outline: none;
+		border: 3px solid $grey4;
+		transition: 0.5s;
+
+		&:focus {
+			border-color: $blue;
+			color: $blue;
+
+			~ .input__label {
+				color: $blue;
+			}
+		}
+	}
+	&__label {
+		@include roboto(11px, 700);
+		margin-bottom: 3px;
+		transition: 0.5s;
+		color: $grey4;
+	}
+
+	&.invalid {
+		.input__field {
+			border-color: red;
+			color: red;
+
+			~ .input__label {
+				color: red;
+			}
+		}
+	}
+}
